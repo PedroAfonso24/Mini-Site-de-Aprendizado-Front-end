@@ -1,0 +1,210 @@
+/* Define um fundo agradável para o corpo da página */
+body {
+    background: rgb(70, 142, 236);
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100vh; /* Altura total da tela */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    margin: 0;
+    font-size: 25px;
+    margin-top: 50px; /* Adiciona um deslocamento do topo da página */
+    overflow: hidden; /* Tira a barra de navegação do site */
+    opacity: 0; /* Inicia com a página invisível */
+    animation: fadeIn 1.5s forwards; /* Animação de entrada */
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Começa invisível */
+        transform: translateY(20px); /* Move para baixo */
+    }
+    100% {
+        opacity: 1; /* Fica visível */
+        transform: translateY(0); /* Volta para a posição original */
+    }
+}
+
+/* Estiliza o título principal */
+h1 {
+    color: white; /* Cor escura para o título */
+    font-size: 2.5em; /* Aumenta o tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    animation: slideIn 1s forwards; /* Animação de entrada para o título */
+}
+
+/* Animação de Slide-in para o título */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%); /* Começa à esquerda */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Move para a posição original */
+        opacity: 1;
+    }
+}
+
+/* Estiliza o botão de verificação */
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-right: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s; /* Animação de entrada com atraso */
+}
+
+/* Estiliza o campo de entrada onde o usuário digita o país */
+input[type="text"]#txtvel {
+    width: 100%; /* Largura do campo de entrada */
+    max-width: 350px; /* Limita a largura máxima em telas grandes */
+    padding: 10px; /* Adiciona um pouco de espaço dentro do campo */
+    font-size: 1.2em; /* Tamanho da fonte dentro do campo */
+    border: 2px solid #ccc; /* Cor e estilo da borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    background-color: #fff; /* Cor de fundo do campo */
+    color: #333; /* Cor do texto */
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+    margin-top: 20px; /* Espaço acima do campo */
+    outline: none; /* Remove o contorno padrão ao focar no campo */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 1s; /* Animação de entrada com atraso */
+}
+
+/* Estilo do campo de entrada quando está em foco */
+input[type="text"]#txtvel:focus {
+    border-color: #3498db; /* Cor da borda ao focar */
+    background-color: #f0f8ff; /* Cor de fundo ao focar */
+}
+
+/* Estiliza o botão Limpar */
+#limpar {
+    background-color: red; /* Cor vermelha para o botão de limpar */
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Faz os botões ficarem lado a lado */
+    border-radius: 5px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 1.5s; /* Animação de entrada com atraso */
+}
+
+/* Estiliza os botões ao passar o mouse */
+input[type="button"]:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+#limpar:hover {
+    background-color: #c0392b; /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo adicional para as mensagens de erro */
+#res {
+    margin-top: 15px;
+    padding: 25px;
+    background-color: #ecf0f1;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #2c3e50;
+    box-sizing: border-box;
+    font-weight: bold;
+    padding-top: 5px;
+    white-space: normal;  /* Permite a quebra de linha */
+    word-wrap: break-word; /* Quebra palavras longas para ajustar na linha */
+    overflow: auto; /* Adiciona rolagem se o conteúdo for maior que a caixa */
+    height: auto; /* Ajusta automaticamente a altura conforme o conteúdo */
+    max-height: 200px; /* Define uma altura máxima para a caixa */
+}
+
+/* Mensagem de erro */
+#res strong {
+    color: red; /* Cor vermelha para a mensagem de erro */
+}
+
+/* Estilo para o texto de copyright */
+#copyright {
+    margin-top: 20px; /* Espaço acima do copyright */
+    font-size: 14px; /* Fonte menor para o copyright */
+    color: black; /* Cor preta */
+    text-align: center; /* Alinha o texto ao centro */
+    bottom: 0px;
+}
+
+button {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(22, 22, 22);
+}
+
+/* Estilo da barra de navegação */
+#nav-buttons {
+    display: flex; /* Exibe os botões de navegação */
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between; /* Organiza os botões de forma espaçada */
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000; /* Garante que os botões fiquem sobre os outros elementos */
+}
+
+/* Estilo para os botões de navegação (Voltar e Avançar) */
+#nav-buttons {
+    position: fixed;
+    bottom: 20px;  /* Distância do fundo da tela */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    margin-bottom: 40px; /* Aumenta o espaço entre o botão e o fundo da tela */
+}
+
+
+/* Deixa o estilo de transição apenas para os botões de navegação */
+#nav-buttons button:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+/* Responsividade: em telas menores, os botões ficam mais largos */
+@media (max-width: 768px) {
+    #nav-buttons button {
+        width: 100%; /* Torna os botões mais largos em telas pequenas */
+        font-size: 1.2em; /* Ajusta o tamanho da fonte */
+        padding: 12px; /* Ajusta o padding */
+    }
+}
+
+/* Media Query para telas muito pequenas (dispositivos como smartphones em retrato) */
+@media (max-width: 480px) {
+    #nav-buttons button {
+        width: 100%; /* Os botões ocupam toda a largura da tela */
+        font-size: 1em; /* Ajusta o tamanho da fonte dos botões */
+    }
+}

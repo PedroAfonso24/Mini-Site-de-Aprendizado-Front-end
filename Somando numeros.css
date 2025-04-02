@@ -1,0 +1,213 @@
+/* Define o corpo da página */
+body {
+    background: rgb(70, 142, 236); 
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-size: 1.2em;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {D
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para o título */
+h1 {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideIn 1s forwards;
+}
+
+/* Animação de Slide-in */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilizando as caixas de entrada e botões */
+.container {
+    display: flex; /* Usar flexbox para alinhar os inputs e operadores */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+    margin: 10px 0;
+
+}
+
+input[type="number"] {
+    font-size: 18pt;
+    width: 100px;
+    margin: 0 10px; /* Margem entre os inputs e operadores */
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="button"] {
+    font-size: 18pt;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-color: #2ecc71;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#copyright {
+    margin-top: 20px; /* Espaço acima do copyright */
+    font-size: 14px; /* Fonte menor para o copyright */
+    color: black; /* Cor preta */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+button {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(22, 22, 22);
+}
+
+/* Estilo da barra de navegação */
+#nav-buttons {
+    display: flex; /* Exibe os botões de navegação */
+    position: relative;
+    bottom: -2040px;
+    width: 100%;
+    justify-content: space-between; /* Organiza os botões de forma espaçada */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para os botões de navegação (Voltar e Avançar) */
+#nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    margin-bottom: 40px; /* Aumenta o espaço entre o botão e o fundo da tela */
+}
+
+
+/* Deixa o estilo de transição apenas para os botões de navegação */
+#nav-buttons button:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+/* Responsividade: em telas menores, os botões ficam mais largos */
+@media (max-width: 768px) {
+    #nav-buttons button {
+        width: 100%; /* Torna os botões mais largos em telas pequenas */
+        font-size: 1.2em; /* Ajusta o tamanho da fonte */
+        padding: 12px; /* Ajusta o padding */
+    }
+}
+
+/* Media Query para telas muito pequenas (dispositivos como smartphones em retrato) */
+@media (max-width: 480px) {
+    #nav-buttons button {
+        width: 100%; /* Os botões ocupam toda a largura da tela */
+        font-size: 1em; /* Ajusta o tamanho da fonte dos botões */
+    }
+}
+
+input[type="button"]:hover {
+    background-color: rgb(49, 194, 5);
+}
+
+/* Estilo para o botão Limpar */
+#limpar {
+    background-color: #e74c3c;
+}
+
+#limpar:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para os resultados */
+#res, #resub, #mult, #div {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 120px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+#res strong, #resub strong, #mult strong, #div strong {
+    color: #2ecc71;
+}
+
+/* Responsividade: Ajusta os inputs para telas menores */
+@media (max-width: 768px) {
+    body {
+        font-size: 1em;
+    }
+
+    .container {
+        flex-direction: column; /* Em telas menores, coloca os itens em coluna */
+    }
+
+    input[type="number"], input[type="button"] {
+        width: 90%;
+        padding: 12px;
+    }
+
+    #res, #resub, #mult, #div {
+        width: 90%;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+/* Media Query para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    input[type="number"], input[type="button"] {
+        width: 100%;
+        font-size: 1em;
+    }
+}

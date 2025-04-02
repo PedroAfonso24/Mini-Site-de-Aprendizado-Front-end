@@ -1,0 +1,219 @@
+/* Define um fundo agradável para o corpo da página */
+body {
+    background: rgb(70, 142, 236); /* Cor de fundo suave */
+    font-family: Arial, sans-serif; /* Fonte agradável */
+    color: #333; /* Cor do texto */
+    height: 100vh; /* Altura da tela inteira */
+    display: flex; /* Usa flexbox para centralizar os elementos */
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    flex-direction: column; /* Coloca os elementos em coluna */
+    margin: 0; /* Remove margens padrão */
+    font-size: 25px;
+    padding-top: 50px; /* Adiciona um pouco de espaço no topo */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Animação de fade-in para o corpo */
+}
+
+/* Animação de fade-in para o body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animação de slide-in para o título */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estiliza o título principal */
+h1 {
+    color: white; /* Cor escura para o título */
+    font-size: 2.5em; /* Aumenta o tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    animation: slideIn 1s ease-out forwards; /* Animação de slide-in */
+}
+
+/* Animação de fade-in para o parágrafo */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estiliza o campo de entrada de número */
+input[type="number"] {
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 300px; /* Aumenta a largura do campo de entrada */
+    box-sizing: border-box;
+    border-radius: 20px;
+    animation: fadeInText 1.5s forwards; /* Animação para aparecer gradualmente */
+}
+
+/* Centraliza o placeholder */
+input[type="number"]::placeholder {
+    text-align: center; /* Centraliza o texto do placeholder */
+    opacity: 1; /* Assegura que o placeholder esteja visível */
+}
+
+/* Estiliza o botão de verificação */
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: black; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-right: 10px; /* Adiciona um espaço entre os botões */
+    animation: fadeInText 1.5s forwards; /* Animação para aparecer gradualmente */
+}
+
+/* Estiliza o botão Limpar */
+#limpar {
+    background-color: red; /* Cor vermelha para o botão de limpar */
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Faz os botões ficarem lado a lado */
+    border-radius: 5px;
+    animation: fadeInText 1.5s forwards; /* Animação para aparecer gradualmente */
+}
+
+/* Estiliza os botões ao passar o mouse */
+input[type="button"]:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+#limpar:hover {
+    background-color: #c0392b; /* Cor do botão ao passar o mouse */
+}
+
+/* Estiliza o div de resultado */
+#res {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ecf0f1; /* Cor de fundo suave para a área de resultado */
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    width: 100%; /* Largura 100% para não sobrecarregar em telas pequenas */
+    max-width: 350px; /* Limita a largura para dispositivos maiores */
+    text-align: center;
+    font-size: 1.2em;
+    color: #2c3e50; /* Cor do texto */
+    box-sizing: border-box; /* Evita que o padding aumente a largura */
+    animation: fadeInText 1.5s forwards; /* Animação para aparecer gradualmente */
+}
+
+/* Destaca o texto em negrito no resultado */
+#res strong {
+    color: #2c3e50; /* Cor do texto normal */
+}
+
+/* Estilo para a palavra "MULTADO" */
+#multado {
+    color: red; /* Cor vermelha para MULTADO */
+    font-weight: bold;
+}
+
+/* Estilo de visibilidade da barra de navegação */
+#nav-buttons {
+    display: none; /* Oculta a barra de navegação inicialmente */
+    position: fixed;
+    bottom: 20px;
+    width: 100%; /* Certifica-se de que os botões ocupem a largura inteira */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; /* Adiciona um pouco de espaço à esquerda e à direita */
+    box-sizing: border-box;
+}
+
+#navToggle:checked + #nav-buttons {
+    display: flex; /* Exibe a barra de navegação quando o checkbox é marcado */
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(22, 22, 22);
+}
+
+/* Estilo para o texto de copyright */
+#copyright {
+    margin-top: 20px; /* Espaço acima do copyright */
+    font-size: 14px; /* Fonte menor para o copyright */
+    color: black; /* Cor preta */
+    text-align: center; /* Alinha o texto ao centro */
+    animation: fadeInText 1.5s forwards; /* Animação de fade-in */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        font-size: 20px; /* Reduz o tamanho da fonte */
+    }
+
+    input[type="number"], input[type="button"], #limpar {
+        width: 100%; /* Torna os botões e inputs mais largos em dispositivos móveis */
+        padding: 12px;
+    }
+
+    #res {
+        width: 90%; /* Garante que o resultado ocupe menos espaço nas telas menores */
+        font-size: 1em; /* Ajusta o tamanho do texto */
+    }
+
+    h1 {
+        font-size: 2em; /* Diminui o tamanho do título */
+    }
+}
+
+/* Media Query para telas muito pequenas (dispositivos como smartphones em retrato) */
+@media (max-width: 480px) {
+    body {
+        font-size: 18px; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    input[type="number"], input[type="button"], #limpar {
+        width: 100%; /* Torna os botões e inputs ainda mais largos */
+        font-size: 1em; /* Ajusta o tamanho da fonte dos botões */
+    }
+
+    #res {
+        width: 100%; /* Garante que o resultado ocupe a tela inteira em dispositivos muito pequenos */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Ajusta o título para telas menores */
+    }
+}

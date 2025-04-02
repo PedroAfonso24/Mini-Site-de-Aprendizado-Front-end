@@ -1,0 +1,129 @@
+/* Define o corpo da página */
+body {
+    background: rgb(70, 142, 236);
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    overflow: hidden;
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para o título */
+h1 {
+    color: white;
+    font-size: 3em; /* Tamanho base do título */
+    margin-top: 50px;
+    margin-bottom: 20px;
+    animation: slideIn 1s forwards;
+    text-align: center; /* Garante que o título esteja sempre centralizado */
+}
+
+/* Animação de Slide-in */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilizando as caixas de entrada e botões */
+p {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 600px;
+    margin: 20px;
+}
+
+/* Estilo dos botões */
+button {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(22, 22, 22);
+}
+
+/* Fixando os botões na parte inferior */
+#nav-buttons {
+    display: flex;
+    position: fixed; /* Fixando os botões na parte inferior da tela */
+    bottom: 20px; /* Distância dos botões da parte inferior */
+    width: 100%;
+    justify-content: space-between; /* Organiza os botões na horizontal */
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Estilo para os botões de navegação */
+#nav-buttons button {
+    font-size: 1.2em; /* Ajusta o tamanho da fonte */
+    padding: 12px;
+    margin: 5px; /* Adiciona um pequeno espaçamento entre os botões */
+}
+
+/* Estilo para o texto "Pedro Afonso" */
+#copyright{
+    position: fixed;
+    bottom: 10px; /* Distância do texto da parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o texto para o centro exato */
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+    font-size: 0.5em;
+}
+
+/* Responsividade: ajustando o tamanho da fonte do título para telas médias */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* Ajuste do título para telas médias */
+    }
+}
+
+/* Responsividade para telas menores (muito pequenas) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em; /* Ajusta o tamanho para telas pequenas */
+    }
+}
+
+/* Estilo para o copyright */
+#copyright {
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}

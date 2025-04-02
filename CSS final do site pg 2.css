@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+body {
+    background: rgb(70, 142, 236);
+    margin: 0;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif; /* Adicionando a fonte do segundo site */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animação de Slide-in para o título */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin: auto;
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Estilo para o parágrafo */
+h2 {
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Estilo para os links */
+a {
+    color: black;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Estilo para o rodapé "Pedro Afonso" */
+p5 {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: xx-large;
+    left: 15px;
+}
+
+/* Estilo do botão */
+button {
+    background-color: black; /* Cor de fundo preto */
+    font-weight: bold;
+    color: white;
+    font-size: 20px; /* Aumentei o tamanho da fonte para ficar mais parecido com o estilo */
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px; /* Ajuste do border-radius para deixar o botão com bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+}
+
+/* Efeito de hover para o botão */
+button:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo da barra de navegação */
+#nav-buttons {
+    display: flex;
+    position: fixed;
+    bottom: 30px; /* Colocando o botão a uma distância confortável do fundo */
+    width: 100%;
+    justify-content: center; /* Alinhamento centralizado */
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Ajuste para o botão "Voltar" */
+#nav-buttons button {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px; /* Borda arredondada para manter o estilo uniforme */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+}
+
+/* Estilo de hover para os botões de navegação */
+#nav-buttons button:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo para o copyright (Pedro Afonso) */
+#copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    position: fixed;
+    bottom: 10px; /* Coloca o "Pedro Afonso" na parte inferior da página */
+    width: 100%;
+    animation: fadeIn 1.5s forwards;
+}

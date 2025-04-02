@@ -1,0 +1,122 @@
+/* Animação de Fade-in e Slide-up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Move os elementos para baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Volta para a posição original */
+    }
+}
+
+/* Estiliza o corpo da página */
+body {
+    background: rgb(70, 142, 236)!important;
+    font: normal 25pt arial;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden; /* Evita rolagem durante a animação */
+    visibility: visible; /* Assegura que o corpo fica visível sem animação global */
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 1.5s forwards; /* Animação de fade-in para o corpo */
+}
+
+/* Animação de fade-in para o body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo do cabeçalho */
+header {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards; /* Ajustando a animação do cabeçalho para durar 1.5 segundos */
+    animation-delay: 0.5s; /* Um pequeno atraso para o cabeçalho */
+}
+
+/* Estilo da seção */
+section {
+    background: white;
+    border-radius: 60px;
+    padding: 15px;
+    width: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards; /* Ajustando a animação da seção para durar 1.5 segundos */
+    animation-delay: 1s; /* Atraso para a animação da seção */
+}
+
+/* Estilo do rodapé */
+footer {
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards; /* Ajustando a animação do rodapé para durar 1.5 segundos */
+    animation-delay: 1.5s; /* Delay para o rodapé aparecer após a animação da seção */
+}
+
+/* Estilo dos botões de navegação */
+button {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards; /* Ajustando a animação dos botões para durar 1.5 segundos */
+    animation-delay: 2s; /* Delay para os botões aparecerem após o rodapé */
+}
+
+/* Botão "Voltar" à esquerda */
+#a1 {
+    left: 20px;
+}
+
+/* Botão "Avançar" à direita */
+#a2 {
+    right: 20px;
+}
+
+/* Efeito de hover para os botões */
+button:hover {
+    background-color: rgb(22, 22, 22); /* Cor do botão ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    section {
+        width: 90%; /* Seção mais estreita em telas pequenas */
+    }
+
+    button {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+}

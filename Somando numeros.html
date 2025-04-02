@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Somando numeros.css">
+    <title>Somando números</title>
+</head>
+<body>
+    
+
+    <h1 id="somando-titulo">Somando Números</h1>
+
+
+
+
+<!-- Botões de navegação (fixados no final da página) -->
+<div id="nav-buttons">
+    <button onclick="window.history.back();">Voltar</button>
+    <button onclick="window.location.href='Final do site pg 1.html'">Avançar</button>
+</div>
+
+    <div class="container">
+        <input type="number" name="txtn1" id="txtn1">
+        <span>+</span>
+        <input type="number" name="txtn2" id="txtn2">
+    </div>
+
+    <input type="button" value="Somar" onclick="somar()">
+    <input type="button" value="Limpar" onclick="Limpar()">
+    <div id="res"><br>Resultado...</div>
+
+    <script>
+
+        // Função para capturar pressionamento da tecla Enter
+        document.getElementById('txtn1').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Muda o foco para o segundo campo de número
+                document.getElementById('txtn2').focus();
+            }
+        });
+
+        document.getElementById('txtn2').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Chama a função de somar quando pressionar Enter no segundo campo
+                somar();
+            }
+        });
+
+        function somar(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            var sCv = s.toString().replace('.', ',')
+            res.innerHTML = `<br>A soma entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
+        }
+
+        function Limpar(){
+            document.getElementById('txtn1').value = ''
+            document.getElementById('txtn2').value = ''
+            document.getElementById('res').innerHTML = '<br>Resultado...'
+        }
+    </script>
+
+    <!-- Repetir o mesmo para as outras operações (subtração, multiplicação, divisão) -->
+
+</body>
+</html>
+
+    </script>
+
+
+
+    <h1><br><br>Subtraindo Valores</h1>
+
+    <div class="container">
+        <input type="number" name="txtn1" id="subn1">
+        <span>-</span>
+        <input type="number" name="txtn2" id="subn2">
+    </div>
+
+    <input type="button" value="Subtrair" onclick="sub()">
+
+    <input type="button" value="Limpar" onclick="Limparsub()">
+
+    <div id="resub"><br>Resultado...</div>
+
+    <script>
+
+        // Função para capturar pressionamento da tecla Enter
+        document.getElementById('subn1').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Muda o foco para o segundo campo de número
+                document.getElementById('subn2').focus();
+            }
+        });
+
+        document.getElementById('subn2').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Chama a função de somar quando pressionar Enter no segundo campo
+                sub();
+            }
+        });
+
+        function sub(){
+            var tn1 = document.getElementById('subn1')
+            var tn2 = document.querySelector('input#subn2')
+            var res = document.getElementById('resub')
+            var n1 = Number(subn1.value)
+            var n2 = Number(subn2.value)
+            var s = n1 - n2
+
+            var sCv = s.toString().replace('.', ',')
+            resub.innerHTML = `<br>A subtração entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
+        }
+
+        function Limparsub(){
+            document.getElementById('subn1').value = ''
+            document.getElementById('subn2').value = ''
+            document.getElementById('resub').innerHTML = '<br>Resultado...'
+
+        }
+    </script>
+
+
+
+
+    <h1><br><br>Multiplicando Valores</h1>
+
+    <div class="container">
+        <input type="number" name="txtn1" id="multn1">
+        <span>x</span>
+        <input type="number" name="txtn2" id="multn2">
+    </div>
+
+
+    <input type="button" value="Multiplicar" onclick="mult()">
+
+    <input type="button" value="Limpar" onclick="Limparmult()">
+
+    <div id="mult"><br>Resultado...</div>
+
+
+    <script>
+
+        // Função para capturar pressionamento da tecla Enter
+        document.getElementById('multn1').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Muda o foco para o segundo campo de número
+                document.getElementById('multn2').focus();
+            }
+        });
+
+        document.getElementById('multn2').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Chama a função de somar quando pressionar Enter no segundo campo
+                mult();
+            }
+        });
+
+        function mult(){
+            var tn1 = document.getElementById('multn1')
+            var tn2 = document.querySelector('input#multn2')
+            var mult = document.getElementById('mult')
+            var n1 = Number(multn1.value)
+            var n2 = Number(multn2.value)
+            var s = n1 * n2
+            var sCv = s.toString().replace('.', ',')
+            mult.innerHTML = `<br>A multiplicação entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
+            
+        }
+
+        function Limparmult(){
+            document.getElementById('multn1').value = ''
+            document.getElementById('multn2').value = ''
+            document.getElementById('mult').innerHTML = '<br>Resultado...'
+
+        }
+    </script>
+
+
+
+
+    <h1><br><br>Dividindo Valores</h1>
+
+    <div class="container">
+        <input type="number" name="txtn1" id="divn1">
+        <span>/</span>
+        <input type="number" name="txtn2" id="divn2">
+    </div>
+
+    <input type="button" value="Dividir" onclick="div()">
+
+    <input type="button" value="Limpar" onclick="Limpardiv()">
+
+    <div id="div"><br>Resultado...</div>
+
+
+    <script>
+
+        // Função para capturar pressionamento da tecla Enter
+        document.getElementById('divn1').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Muda o foco para o segundo campo de número
+                document.getElementById('divn2').focus();
+            }
+        });
+
+        document.getElementById('divn2').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                // Chama a função de somar quando pressionar Enter no segundo campo
+                div();
+            }
+        });
+
+        function div(){
+            var tn1 = document.getElementById('divn1')
+            var tn2 = document.querySelector('input#divn2')
+            var div = document.getElementById('div')
+            var n1 = Number(divn1.value)
+            var n2 = Number(divn2.value)
+            var s = n1 / n2
+            var sCv = s.toString().replace('.', ',')
+            div.innerHTML = `<br>A divisão entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
+        }
+
+        function Limpardiv(){
+            document.getElementById('divn1').value = ''
+            document.getElementById('divn2').value = ''
+            document.getElementById('div').innerHTML = '<br>Resultado...'
+        }
+
+    </script>
+    
+    <div id="copyright">© Pedro Afonso</div>
+
+    
+
+
+
+    
+</body>
+</html>

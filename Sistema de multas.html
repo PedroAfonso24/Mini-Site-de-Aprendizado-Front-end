@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sistema de multas.css">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    
+    Velocidade do carro ( Limite de velocidade de 60km/h ): <input type="number" name="txtvel" id="txtvel" onkeydown="checkEnter(event)" placeholder="Digite a velocidade">
+
+    <input type="button" value="Verificar" onclick="calcular()">
+    <input type="button" value="Limpar" id="limpar" onclick="limpar()">
+
+    <div id="res"></div>
+
+    <!-- Botões de Navegação (Voltar e Avançar) -->
+    <div id="nav-buttons">
+        <button onclick="window.history.back();">Voltar</button>
+        <button onclick="window.location.href='Verificador de pais.html'">Avançar</button>
+    </div>
+
+    <div id="copyright">© Pedro Afonso</div>
+
+    <script>
+        function calcular() {
+    var txtv = document.getElementById('txtvel');
+    var res = document.querySelector('div#res');
+    var vel = Number(txtv.value);
+    
+    // Verifica se a velocidade foi fornecida
+    if (isNaN(vel) || vel === 0) {
+        res.innerHTML = '<p style="color: red; font-weight: bold;">Erro: Por favor, insira uma velocidade!</p>';
+        return; // Impede a execução do restante da função se a entrada for inválida
+    }
+    
+    // Colorir a quilometragem
+    if (vel < 60) {
+        res.innerHTML = `<br>Sua velocidade atual é de <strong style="color: green;">${vel} Km/h</strong>`;
+    } else if (vel === 60) {
+        res.innerHTML = `<br>Sua velocidade atual é de <strong style="color: green;">${vel} Km/h</strong>`;
+    } else {
+        res.innerHTML = `<br>Sua velocidade atual é de <strong style="color: red;">${vel} Km/h</strong>`;
+    }
+
+    // Mensagem de multa e cor da palavra "MULTADO"
+    if (vel > 60) {
+        res.innerHTML += '<p>Você está <span id="multado">MULTADO</span> por excesso de velocidade</p>';
+    } else if (vel === 60) {
+        res.innerHTML += '<p>Você está dentro do limite de velocidade.</p>';
+    } else {
+        res.innerHTML += '<p>Dirija sempre com cinto de segurança.</p>';
+    }
+}
+
+
+        // Função de limpar os campos
+        function limpar() {
+            document.getElementById('txtvel').value = '';
+            document.getElementById('res').innerHTML = '';
+            document.getElementById('txtvel').focus();  // Foca novamente no campo de entrada
+        }
+
+        // Função para acionar a verificação com "Enter"
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                calcular();
+            }
+        }
+    </script>
+</body>
+</html>

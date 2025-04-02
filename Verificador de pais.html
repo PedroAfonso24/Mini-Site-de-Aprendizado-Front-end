@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Verificador de pais.css">
+    <title>Praticando</title>
+</head>
+<body>
+    <h1>Verificador de País</h1>   
+    País em que você vive: <input type="text" name="txtvel" id="txtvel" onkeydown="checkEnter(event)" placeholder="Digite o país:">
+
+    <input type="button" value="Verificar" onclick="calcular()">
+    <input type="button" value="Limpar" id="limpar" onclick="limpar()">
+
+    <div id="res"></div>
+
+    <div id="nav-buttons">
+        <button onclick="window.history.back();">Voltar</button>
+        <button onclick="window.location.href='Somando numeros.html'">Avançar</button>
+    </div>
+
+    <div id="copyright">© Pedro Afonso</div>
+    
+    <script>
+        function calcular() {
+            var pais = document.getElementById('txtvel').value.trim().toLowerCase();  // Acessa o valor digitado, remove espaços e converte para minúsculo
+            var res = document.querySelector('div#res');  // Seleciona a área de resultado
+
+            // Verifica se o campo está vazio
+            if (pais === "") {
+                res.innerHTML = '<br><strong>Por favor, coloque o nome de um país.</strong>';
+                res.style.color = 'red'; // Define a cor da mensagem de erro como vermelha
+            } 
+            // Verifica se o valor digitado contém números
+            else if (/\d/.test(pais)) {
+                res.innerHTML = '<br><strong>Erro: Por favor, não digite números! Apenas o nome do país é permitido.</strong>';
+                res.style.color = 'red'; // Define a cor da mensagem de erro como vermelha
+            } 
+            else {
+                // Verifica se o país é Brasil
+                if (pais === "brasil") {
+                    res.innerHTML = '<br>Você é brasileiro';
+                    res.style.color = 'green'; // Cor da mensagem para "Você é brasileiro"
+                } else {
+                    res.innerHTML = '<br>Você não é brasileiro';
+                    res.style.color = 'green'; // Cor da mensagem para "Você não é brasileiro"
+                }
+            }
+        }
+
+        // Função de limpar os campos
+        function limpar() {
+            document.getElementById('txtvel').value = '';
+            document.getElementById('res').innerHTML = '';
+            document.getElementById('txtvel').focus();  // Foca novamente no campo de entrada
+        }
+
+        // Função para acionar a verificação com "Enter"
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                calcular();
+            }
+        }
+    </script>
+
+</body>
+</html>
